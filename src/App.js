@@ -7,12 +7,24 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: 'anonymous',
+      username: 'React',
+      isGreetingMode: true,
     };
   }
+  switchModeGreeting = () => {
+    const { isGreetingMode } = this.state;
+    this.setState({
+      isGreetingMode: !isGreetingMode,
+    });
+  };
   render() {
-    const { username } = this.state;
-    return <Greeting name={username} isGreeting={false} />;
+    const { username, isGreetingMode } = this.state;
+    return (
+      <>
+        <button onClick={this.switchModeGreeting}> change mode </button>
+        <Greeting name={username} isGreeting={isGreetingMode} />
+      </>
+    );
   }
 }
 export default App;
