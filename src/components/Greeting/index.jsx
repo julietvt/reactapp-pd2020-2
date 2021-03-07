@@ -9,8 +9,12 @@ function Greeting(props) {
 */
 
 const Greeting = props => {
-    const {name, surname} = props;
-    return <div>Hello, {name} {surname} !!!</div>;
+    const {name, isGreeting=true} = props;
+    return(
+        <div>
+        {isGreeting ? 'Hello' : 'Bye'} {name}
+        </div>
+    );
 };
 
 /*
