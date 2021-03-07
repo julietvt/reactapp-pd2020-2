@@ -1,8 +1,8 @@
 import React from 'react'
 
 const Greeting = props => {
-    const {name} = props;
-    return <div>Hello, {name} !!!</div>;
+    const {name, surname} = props;
+    return <div>Hello, {name} {surname} !!!</div>;
 };
 
 export default Greeting;
