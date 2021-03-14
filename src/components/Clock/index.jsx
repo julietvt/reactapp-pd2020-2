@@ -35,6 +35,7 @@ class Clock extends Component{
             this.timeoutId = null;
         }
     };
+    reset = () => {};
     componentDidMount(){ this.start(); }
     componentDidUpdate(){
         const {isRunning} = this.state;
@@ -53,7 +54,7 @@ class Clock extends Component{
                 </div>
                 <button disabled={isRunning} onClick={this.start}>start</button>
                 <button disabled={!isRunning} onClick={this.stop}>stop</button>
-                <button>reset</button>
+                <button onClick={this.reset}>reset</button>
             </article>
         )
     }

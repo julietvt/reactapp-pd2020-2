@@ -1,10 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
 import { Component } from 'react';
-import Clock from './components/Clock';
+import UserList from './components/UserList';
 
 function App() {
-  return <Clock />;
+  return (
+    <>
+      <UserList />
+    </>
+  );
 }
 
 export default App;
