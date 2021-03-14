@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 import UserItem from '../../components/UserItem';
-
-class UserList extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            users: [
+const dbUsers = [
                 {
                     id: 1,
                     fName: 'firstName1',
@@ -31,12 +26,25 @@ class UserList extends Component {
                     fName: 'firstName5',
                     lName: 'lastName5',
                 },
-            ],
+            ];
+class UserList extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            users: dbUsers.map(u=>({...u, isSelected:false})),
         };
     }
-    mapUser = (user) => {
-        return <UserItem key={user.id} user={user} />;
+    mapUser = (user, index) => {
+        const {users} = this.state;
+        const selectUsersHandler = () => {
+            const newUsers = [...users];
+            this.setState({users: newUsers});
+        };
+        return(
+            <UserItem key={user.id} user={user} onSelectUsers={selectUsersHandler} isSelected={user.isSelected} />
+        );
     }
+    
   render() {
       const {users} = this.state;
     return (
