@@ -1,5 +1,4 @@
-import { startOfYear } from 'date-fns';
-import { addMilliseconds } from 'date-fns/esm';
+import { addMilliseconds, format } from 'date-fns';
 import React, {useState, useEffect} from 'react';
 import styles from './Clock.module.scss';
 function Clock(){
