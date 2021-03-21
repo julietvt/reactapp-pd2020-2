@@ -1,12 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
 import { Component } from 'react';
-import Calendar from './components/Calendar';
+import Counter from './components/Counter';
 
 const App = () => {
   return (
     <>
-      <Calendar />
+      <Counter step={2} />
     </>
   );
 };
