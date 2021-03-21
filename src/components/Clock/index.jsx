@@ -1,4 +1,4 @@
-import { addMilliseconds, format } from 'date-fns';
+import { addMilliseconds, format, startOfYear } from 'date-fns';
 import React, {useState, useEffect} from 'react';
 import styles from './Clock.module.scss';
 function Clock(){
@@ -20,6 +20,7 @@ function Clock(){
             <button onClick={() => setIsRunning(!isRunning)}>
                 {isRunning ? 'stop' : 'start'}
             </button>
+            <button onClick={() => {setTime(startOfYear(time));}}>reset</button>
         </div>
     );
 }
