@@ -1,32 +1,24 @@
 import React, {Component} from 'react';
-import {format, add, getWeeksInMonth, getDaysInMonth} from 'date-fns';
-
-/*
-getWeeks({date, currentDate}){
-eachWeekOfInterval(
-start: startOfMonth(date)
-end: endOfMonth(date)
-).map
-
-<Week key={weekDate}
-weekDate={weekDate}
-date={date}
-currentDate={currentDate}
-/>
-}
-
-const Month = props => {
-const {date}=props;
-}
-*/
+import Day from './Day';
+import Month from './Month';
+import styles from './Calendar.module.scss'
+import PropTypes from 'prop-types';
 
 const Calendar = ({currentDate}) => {
     return(
-        <article>
+        <article className={styles.wrapper}>
             <Day currentDate={currentDate} />
             <Month date={currentDate} currentDate={currentDate}/>
         </article>
     );
 };
+
+Calendar.propTypes = {
+    currentDate: PropTypes.instanceOf(Date),
+};
+Calendar.defaultProps = {
+    currentDate: new Date(),
+}
+
 export default Calendar;
 
