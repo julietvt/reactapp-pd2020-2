@@ -1,9 +1,13 @@
-.wrapper{
+@import './../settings/color_theme.scss';
+@import './../settings/contants.scss';
+@import './../settings/basic_styles.scss';
 
+.wrapper {
+  @extend %wrapper;
+  background-color: $primary-color;
 }
-.name{
-
+.name {
 }
-.number{
-    
+.number {
+  /*font-size: $primary-font-size * 10;*/
 }
